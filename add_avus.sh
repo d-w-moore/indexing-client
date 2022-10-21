@@ -1,4 +1,5 @@
 #!/bin/bash
+# This is very slow.  Use 'add_avus.py' instead.
 DELIM=";;;"
 while read LINE; do
     Y=($(sed "s/$DELIM/\n/g"<<<"$LINE"))
