@@ -1,4 +1,4 @@
-import sys,pprint
+import sys,pprint,json
 for x in sys.stdin:
     y = x.split(";;;")
     ID,MTIME,NAME,PARENT,SIZE = y[:5]
@@ -16,4 +16,4 @@ for x in sys.stdin:
              ,"lastModifiedDate": int(MTIME,10)
              ,"isFile":is_file
     }
-    pprint.pprint (record)
+    print(json.dumps(record,separators=(',',':')).rstrip("\n"))
