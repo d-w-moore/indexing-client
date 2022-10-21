@@ -12,7 +12,7 @@ for x in sys.stdin:
                )
              ,"dataSize": data_size
              ,"fileName": NAME
-             ,"zoneName": logical_path.split("/",1)[0]
+             ,"zoneName": logical_path.split("/",2)[1]
              ,"absolutePath": logical_path
              ,"lastModifiedDate": int(MTIME,10)
              ,"isFile":is_file
