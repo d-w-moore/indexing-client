@@ -1,7 +1,9 @@
 # indexing-client
 
-# Index iRODS system metadata and AVUS under a $ROOT_COLLECTION
-# Commands 
+Index iRODS system metadata and AVUS under a $ROOT_COLLECTION
+
+## Commands 
+
 ```
 ROOT_COLL="/tempZone/home/rods/v1"
 
