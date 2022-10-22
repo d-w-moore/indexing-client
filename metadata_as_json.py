@@ -11,19 +11,27 @@ except ImportError:
 
 remove_cr = lambda List:List[:-1] + [elem.rstrip("\n") for elem in List[-1:]]
 
-opt,arg = getopt.getopt(sys.argv[1:],'qvf:')
+usage = False
+try:
+  opt,arg = getopt.getopt(sys.argv[1:],'f:H:N:P:',['help'])
+except:
+  usage = True
+
 optD = dict(opt)
+
+if usage or '--help' in optD: 
+    print("usage:\t{sys.argv[0]} [[-H host] [-P port-number] [-N index-name]] | -f [format]".format(**locals()) +
+          "\n\t""\t""example format: '{ID} {JSON}'.")
+    exit()
+
+PORT = int(optD.get('-P','9200'))
+HOST = optD.get('-H','localhost')
+NAME_OF_INDEX = optD.get('-N','metadata_index')
 
 output_format = optD.get('-f')
 
 if not output_format:
-    output_format = '''curl -H "Content-Type: application/json" -X POST http://localhost:9200/metadata_idx/_doc/{ID} -d {SHELL_QUOTED_JSON}'''
-
-if '-v' in optD:
-    print ('output_format =',output_format, file = sys.stderr)
-
-if '-q' in optD:
-    exit()
+    output_format = '''curl -H "Content-Type: application/json" -X POST http://{HOST}:{PORT}/{NAME_OF_INDEX}/_doc/{ID} -d {SHELL_QUOTED_JSON}'''
 
 for x in sys.stdin:
     y = x.split(";;;")
