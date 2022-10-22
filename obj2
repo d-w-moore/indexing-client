@@ -1,12 +1,12 @@
 10039;;;01664937461;;;/tempZone/home/rods/v1;;;/tempZone/home/rods;;;-1
 10040;;;01664937467;;;/tempZone/home/rods/v1/dir0;;;/tempZone/home/rods/v1;;;-1
 10048;;;01664937479;;;/tempZone/home/rods/v1/dir1;;;/tempZone/home/rods/v1;;;-1
-10056;;;01664937480;;;/tempZone/home/rods/v1/dir2;;;/tempZone/home/rods/v1;;;-1
+10056;;;01664937480;;;/tempZone/home/rods/v1/dir2;;;/tempZone/home/rods/v1;;;-1;;;a;;;b;;;c
 10052;;;01664937480;;;/tempZone/home/rods/v1/dir3;;;/tempZone/home/rods/v1;;;-1
 10044;;;01664937479;;;/tempZone/home/rods/v1/dir4;;;/tempZone/home/rods/v1;;;-1
 10042;;;01664937479;;;0;;;/tempZone/home/rods/v1/dir0;;;1
-10041;;;01664937479;;;1;;;/tempZone/home/rods/v1/dir0;;;1;;;oh;;;one;;;two
-10043;;;01664937479;;;2;;;/tempZone/home/rods/v1/dir0;;;1
+10041;;;01664937479;;;1;;;/tempZone/home/rods/v1/dir0;;;1;;;oh;;;one;;;three;;;x;;;y;;;z;;;oh;;;one;;;two;;;a;;;';;;c
+10043;;;01664937479;;;2;;;/tempZone/home/rods/v1/dir0;;;1;;;x;;;y;;;z
 10050;;;01664937479;;;0;;;/tempZone/home/rods/v1/dir1;;;1
 10049;;;01664937479;;;1;;;/tempZone/home/rods/v1/dir1;;;1
 10051;;;01664937479;;;2;;;/tempZone/home/rods/v1/dir1;;;1
