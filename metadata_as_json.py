@@ -4,6 +4,8 @@ import pprint
 import sys
 import getopt
 
+_DELIM = ';;;'
+
 try:
     from shlex import quote
 except ImportError:
@@ -34,7 +36,7 @@ if not output_format:
     output_format = '''curl -H "Content-Type: application/json" -X POST http://{HOST}:{PORT}/{NAME_OF_INDEX}/_doc/{ID} -d {SHELL_QUOTED_JSON}'''
 
 for x in sys.stdin:
-    y = x.split(";;;")
+    y = x.split(_DELIM)
     ID,MTIME,NAME,PARENT,SIZE = y[:5]
     SIZE = int(SIZE)
     data_size,is_file = max(SIZE,0),(SIZE >= 0)

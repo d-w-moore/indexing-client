@@ -1,6 +1,8 @@
 #!/bin/bash
 # This is very slow.  Use 'add_avus.py' instead.
-DELIM=";;;"
+
+DELIM=";;;" # must escape any characters significant in sed search patterns
+
 while read LINE; do
     Y=($(sed "s/$DELIM/\n/g"<<<"$LINE"))
     if [ ${Y[4]} = "-1" ]; then
@@ -8,7 +10,7 @@ while read LINE; do
     else
         t=DATA
     fi
-    AVUs=$(iquest --no-page ';;;%s;;;%s;;;%s' "select order(META_${t}_ATTR_NAME), META_${t}_ATTR_VALUE, META_${t}_ATTR_UNITS where ${t}_ID = '${Y[0]}'")
+    AVUs=$(iquest --no-page "${DELIM}%s${DELIM}%s${DELIM}%s" "select order(META_${t}_ATTR_NAME), META_${t}_ATTR_VALUE, META_${t}_ATTR_UNITS where ${t}_ID = '${Y[0]}'")
     if [[ $AVUs =~ 'CAT_NO_ROWS' ]]; then AVUs="" 
     else
         AVUs=$(tr -d "\n" <<<"$AVUs")
