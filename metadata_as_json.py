@@ -3,6 +3,7 @@ import json
 import pprint
 import sys
 import getopt
+from mime_table import get_mimetype
 
 _DELIM = ';;;'
 
@@ -51,6 +52,8 @@ for x in sys.stdin:
              ,"absolutePath": logical_path
              ,"lastModifiedDate": int(MTIME,10)
              ,"isFile":is_file
+             ,"mimeType":get_mimetype(NAME)
+             ,"url":"http:/"+logical_path
     }
     JSON = json.dumps(record,separators=(',',':')).rstrip("\n")
     SHELL_QUOTED_JSON = quote(JSON)
