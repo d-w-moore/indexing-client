@@ -27,7 +27,7 @@ python3 metadata_as_json.py -f '{ID} {JSON}' < objs_with_avus | while read id js
 which would generate custom-formatted records with the object ID in the ICAT db, followed by the literal JSON for the index request, 
 and pipe that through custom processing via the variables $id and $json in a Bash loop.
 
-Or (even better) to output as a batch file of curl commands compatible with sh/Bash and gnu Parallel.
+Or (even better) to output as a batch file of curl commands compatible with sh/Bash and gnu parallel:
 ```
 python3 metadata_as_json.py -H [host] -P [port] -N [index-name] < objs_with_avus > curl_commands
 ```
