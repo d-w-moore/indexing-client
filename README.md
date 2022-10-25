@@ -29,5 +29,5 @@ and pipe that through custom processing via the variables $id and $json in a Bas
 
 Or (even better) to output as a batch file of curl commands compatible with sh/Bash and gnu Parallel.
 ```
-   * python3 metadata_as_json.py -H [host] -P [port] -N [index-name] < objs_with_avus > curl_commands
+python3 metadata_as_json.py -H [host] -P [port] -N [index-name] < objs_with_avus > curl_commands
 ```
